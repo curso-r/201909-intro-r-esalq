@@ -44,7 +44,9 @@ class: middle, center
    - Conceitos básicos e importação
    - Manipulação de dados
    - Visualização de dados 
-   - Case, dashboards estáticos e outros tópicos
+   - R Markdown
+   - Pacotes do R
+   
    
 ---
 
