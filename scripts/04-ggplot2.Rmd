@@ -27,6 +27,7 @@ knitr::include_graphics("img/layers.png")
 ```{r}
 library(tidyverse)
 library(ggplot2)
+library(lubridate)
 ```
 
 # Introdução

@@ -5,6 +5,9 @@ library(lubridate)
 
 # Base de dados -----------------------------------------------------------
 
+# Brasil.io: https://brasil.io/home
+# https://drive.google.com/drive/folders/1brsEPvQoeQ82WwAsrdCr-rbC4jv5aEfq
+
 sp <- read_rds("dados/sp_amostra.rds")
 glimpse(sp)
 
