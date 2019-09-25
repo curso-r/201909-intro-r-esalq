@@ -68,7 +68,6 @@ d_abertura %>%
         panel.grid.minor.x = element_blank())
 
 
-
 # 3. Atividade econômica principal. ------------------------------
 
 tab_cnae <- sp %>% 
@@ -203,10 +202,8 @@ sp %>%
   geom_line() +
   facet_wrap(~nm_classe, scales = "free")
   
-  
-  
 
-# Exercícios --------------------------------------------------------------
+
 
 
 
