@@ -1,0 +1,57 @@
+---
+title: "RMarkdown"
+output: pdf_document
+header-includes:
+   - \usepackage{amsmath}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Chunks
+
+ctrl + alt + i
+
+```{r}
+
+```
+
+Opções dos chunks:
+
+
+## Formatação
+
+# Texto grande 1
+
+## Texto grande 2 
+
+## Texto grande 3
+
+Texto simples `com` código no meio. 
+
+Pode ser uma expressão do R `r 2 + 2`
+
+Pode usar $\text{\LaTeX}$ no contexto de equações.
+
+$$\frac{1}{1 + exp(x)}$$
+
+Colocar [links](https://www.google.com)
+
+![Legenda](img/layers.png)
+
+Listas:
+
+* Item 1 
+* Item 2
+
+1. Item 1
+1. Item 2
+
+> Citações 
+
+
+
+
+
+

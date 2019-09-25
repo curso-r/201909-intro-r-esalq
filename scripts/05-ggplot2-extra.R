@@ -9,6 +9,8 @@ natureza <- qsacnpj::tab_natureza_juridica %>%
     codigo_natureza_juridica = as.numeric(cod_subclass_natureza_juridica)
   )
 
+# 1. Natureza -------------------------------------------------------------
+
 natureza_sp <- sp %>% 
   left_join(natureza, "codigo_natureza_juridica") %>% 
   replace_na(list(nm_natureza_juridica = "Vazio",
@@ -182,3 +184,30 @@ d_plot_qtd_socios %>%
        fill = "Tipo") +
   guides(fill = guide_legend(reverse = TRUE)) +
   theme(legend.position = c(.8, .2))
+
+
+# 6 -----------------------------------------------------------------------
+
+sp %>% 
+  mutate(cod_cnae = str_pad(cnae_fiscal, 7, "left", "0")) %>% 
+  left_join(qsacnpj::tab_cnae, "cod_cnae") %>% 
+  replace_na(
+    list(nm_secao = "Vazio", nm_divisao = "Vazio",
+         nm_grupo = "Vazio", nm_classe = "Vazio",
+         nm_cnae = "Vazio")
+  ) %>% 
+  filter(nm_grupo == "Pecuária") %>% 
+  group_by(ano = year(data_inicio_atividade), nm_classe) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes(x = ano, y = n, color = nm_classe)) +
+  geom_line() +
+  facet_wrap(~nm_classe, scales = "free")
+  
+  
+  
+
+# Exercícios --------------------------------------------------------------
+
+
+
+
